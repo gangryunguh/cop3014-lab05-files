@@ -26,7 +26,7 @@ int main() {
     fin.open(infile);
     while (!fin) {
         // input file does not exist, prompt the user again
-        cout << "Enter an input file name: " << flush;
+        cout << "Input file open error.. Enter an input file name again: " << flush;
         string infile;
         cin >> infile;
         fin.open(infile);
@@ -42,7 +42,7 @@ int main() {
     fout.open(outfile);
     while (!fout) {
         // output file cannot open, prompt the user again
-        cout << "Enter an output file name: " << flush;
+        cout << "Output file open error.. Enter an output file name again: " << flush;
         string outfile;
         cin >> outfile;
         fout.open(outfile);
@@ -50,6 +50,8 @@ int main() {
 
     // Copy characters from the input file to the output file
     char c;
+
+    //while (fin >> c) <-- stream extract operator skips over whitespaces
     while ((c = fin.get()) != EOF)
         fout << c;
     // close the input and output files

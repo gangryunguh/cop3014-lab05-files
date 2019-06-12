@@ -12,17 +12,31 @@ int main()
 	ifstream inFile;	// To hold the input file
 
 	// Open the file - "LineUp.txt".
+    ifstream fin;
+    fin.open("LineUp.txt");
+
+    if (!fin) {
+        cerr << "Error, input file open fails.\n";
+        exit(1);
+    }
 
 
 	// Read the first student's name from the file.
-
+    fin >> name;
 
 	// Set front and back equal to the first student's name.
+    back = front = name;
 
-	// Read the remaining student's names from the file to update front and back.
+    // Read the remaining student's names from the file to update front and back.
+    while (fin >> name) {
+        if (back < name)
+            back = name;
+        if (front > name)
+            front = name;
+    }
 
 	// Close the file.
-
+    fin.close();
 
 	// Display the name of the student who is in the
 	// front of the line.

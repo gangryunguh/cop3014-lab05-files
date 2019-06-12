@@ -18,11 +18,13 @@ int main()
 	int    months;               // Number of months passed
    
 	// File stream object.
+    ofstream outFile;
 
 	// Open a file "Report.txt" to save the report to.
-
+    outFile.open("Report.txt");
 
 	// Set up the output formatting - set two fractional digits as precision
+    outFile << fixed << setprecision(2) << showpoint;
 
 	// Get the annual interest rate.
 	cout << "Enter the annual interest rate "
@@ -100,10 +102,10 @@ int main()
 		// Determine if we have a negative balance.
 		if (balance < 0)
 		{
-			outFile << "\nThe account has a balance of $" 
-					<< balance << endl;
-			outFile << "Because the balance is negative, the account ";
-			outFile << "has been closed.\n";
+            outFile << "\nThe account has a balance of $"
+                    << balance << endl;
+            outFile << "Because the balance is negative, the account ";
+            outFile << "has been closed.\n";
 			break;   // Break out of loop! The account is closed.
 		}
       
@@ -118,9 +120,17 @@ int main()
 	}
 
 	// Write the report.
+    outFile << "\nThe ending balance: $"
+            << balance << endl;
+    outFile << "Total amount of deposits: $"
+            << totalDeposits << endl;
+    outFile << "Total amount of withdrawals: $"
+            << totalWithdrawals << endl;
+    outFile << "Total interest earned: $"
+            << totalInterest << endl;
 
 	// Close the file.
-
+    outFile.close();
    
 	return 0;
 }

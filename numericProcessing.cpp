@@ -12,18 +12,26 @@ int main()
 	double average;      // To hold the average
    
 	// File stream object
-
-   
+    ifstream fin;
 	// Open the file.
-
+    fin.open("Random.txt");
+    if (fin.fail() /* !fin */) {
+        cerr << "Input file open errors (:" << endl;
+        exit(1);
+    }
    
 	// Read the numbers from the file and accumulate total
-
+    while (fin >> number) {
+        total += number;
+        count++;
+    }
 	// Close the file.
-
+    fin.close();
    
 	// Calculate the average of the numbers.
-
+    average = 0.0;
+	if (count)
+        average = total / count;
    
 	// Display the results.
 	cout << "Number of numbers: " << count << endl
