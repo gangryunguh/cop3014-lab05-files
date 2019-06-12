@@ -8,4 +8,5 @@ add_executable(cop3014_lab05_files numericProcessing.cpp lineUp.cpp savingAccoun
 add_executable(numericProcessing.exe numericProcessing.cpp)
 add_executable(lineUp.exe lineUp.cpp)
 add_executable(savingAccountBalance.exe savingAccountBalance.cpp)
+add_executable(fileCopy.exe fileCopy.cpp)
 
