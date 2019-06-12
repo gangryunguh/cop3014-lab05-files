@@ -3,4 +3,6 @@
 *.o
 *.exe
 *.bin
+out.txt
+diff.txt
 \#*\#
