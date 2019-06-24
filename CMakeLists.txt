@@ -9,4 +9,5 @@ add_executable(numericProcessing.exe numericProcessing.cpp)
 add_executable(lineUp.exe lineUp.cpp)
 add_executable(savingAccountBalance.exe savingAccountBalance.cpp)
 add_executable(fileCopy.exe fileCopy.cpp)
+add_executable(stringCopy.exe stringCopy.cpp)
 
