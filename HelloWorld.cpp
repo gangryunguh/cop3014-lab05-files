@@ -1,4 +1,8 @@
-//
-// Created by Gang-Ryung Uh on 2019-06-24.
-//
-
+#include <iostream>
+using namespace std;
+int main()
+{
+    cout << "Hello, World!";
+    cout << "Character processing in c++\n";
+    return 0;
+}
