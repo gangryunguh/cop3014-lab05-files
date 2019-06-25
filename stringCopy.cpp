@@ -24,6 +24,7 @@ int main() {
     }
 
     bool inString = false;
+    bool inLineComment = false;
     int lineNumber = 0;
     char c;
     while ((c = ifs.get()) != EOF) {
@@ -35,6 +36,18 @@ int main() {
         }
         else if (inString)
             cout << c << flush;
+
+        if (c == '/') {
+            c = ifs.get();
+            if (c == '/') {
+                inLineComment = !inLineComment;
+                cout << "Line Comment: " << flush;
+                while ((c = ifs.get()) != '\n')
+                    cout << c;
+            }
+            else
+                ifs.unget();
+        }
 
         if (c == '\n')
             lineNumber++;
